@@ -1,0 +1,23 @@
+Web ID	Access ID	Salesorder Number	Shipping Method	Customer Number	Payment Method	
+155813447	62741	46605061	U.S. Postal Service Priority Mail* (2-3 Day Delivery to most US addresses)	8739046	VISA	
+
+Shipping Address
+First Name	Last Name	Company	Mail Stop	Address Line 1	Address Line 2	City	State	Postal Code	Country	Email Address	Telephone	
+ALEXANDER	SHROYER	IN UNIVERSITY/PSYCHOLOGY		1101 E 10TH ST		BLOOMINGTON	IN	47405	USA	ASHROYER@INDIANA.EDU	8128564408	
+
+Billing Address
+First Name	Last Name	Company	Mail Stop	Address Line 1	Address Line 2	City	State	Postal Code	Country	Email Address	Telephone	
+ALEXANDER	SHROYER	IN UNIVERSITY/PSYCHOLOGY		1101 E 10TH ST		BLOOMINGTON	IN	47405	USA			
+
+Index	Quantity	Part Number	Description	Customer Reference	Available Quantity	Backorder Quantity	Unit Price USD	Extended Price USD	
+1	10	475-2967-1-ND	PHOTODIODE PIN 820NM SMD		10	0	0.68900	6.89	
+2	3	PEC11R-4220F-S0012-ND	ENCODER ROTARY		3	0	1.68000	5.04	
+3	4	568-11063-1-ND	IC AMP AUDIO 3W STER AB 8SOIC		4	0	0.56000	2.24	
+4	1	HM152-ND	BOX ALUM UNPAINTED 4.71"LX3.7"W		1	0	8.82000	8.82	
+5	10	565-2057-1-ND	CAP ALUM 100UF 20% 6.3V SMD		10	0	0.29400	2.94	
+6	4	CP1-3515-ND	CONN JACK STEREO 3.5MM R/A		4	0	1.73000	6.92	
+7	100	490-11917-1-ND	CAP CER 0.1UF 50V X5R 0402		100	0	0.02590	2.59	
+						Subtotal	35.44
+						Shipping	unknown
+						Estimated Sales Tax	0.00
+						Total	unknown

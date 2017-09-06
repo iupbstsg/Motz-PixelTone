@@ -1,0 +1,61 @@
+* Motz-PixelTone
+
+[[./doc/box.png]]
+
+- Principal Investigator: Ben Motz
+- Engineers: Alex Shroyer, Jeff Sturgeon
+
+This project exists because it's difficult to accurately measure a modern computer's audio-visual system's latency.
+Generating video and audio output is easy enough, but modern operating systems introduce *variable* amounts of latency due to a variety of other factors (multitasking, context switches, kernel vs. user code, etc).  This causes the latency between its different outputs (i.e. audio and video) to appear to be non-deterministic[1].  This means that for someone running an experiment needing sub-millisecond timing resolution, simply relying on the computer's scheduling is not enough.
+
+Therefore we hope to solve this by removing one source of latency from the equation.
+
+In the original experiment designed by Ben Motz, a Matlab program (using Psych Toolbox) generates audio tones and video frames in a specific ordering.  The operating system (Mac OS X 10.x) introduces a variable latency between the beginning of the video frame and its respective audio tone.
+
+We eliminate this variable latency through the addition of special-purpose hardware.  A photodiode mounted on the screen feeds a microcontroller, which in turn plays a preset audio waveform.
+
+In this experiment there are 2 different tones (white and pink noise), and for maximum flexibility we trigger these tones separately using 2 photodiode inputs.
+
+[1]: In reality, this non-deterministic appearance is only from the perspective of "user mode" code, which is what experimenters generally use.
+
+
+** Actual Latency
+- The delay between one of the input pushbuttons and the digital output of the device is 800 microseconds.
+- The delay between one of the input pushbuttons and audio tone playback is 34.8 milliseconds.
+
+In order to generate simultaneous audio and video stimuli, your video monitor should generate its audio trigger in frame =x=, and then generate the visual stimuli in frame =x+2=.
+
+** Features
+
+- 2 photodiode inputs (with manual momentary switch for testing/override)
+- stereo (actually dual-mono) 1/8" headphone output capable of driving 8 ohm headphones
+- 2 noise tones - "white" and "pink"
+- volume adjustable in 5dB steps
+- wall powered (not dependent on USB)
+- usb jack for power (and programming)
+
+The noise tones have the same envelope:
+
+- 3ms linear ramp-up
+- 10.7ms at 100%
+- 3ms linear ramp-down
+
+
+** Materials
+
+| item                          | quantity used | per unit price ($) | total qty. bought | extended price ($) | link      |
+|-------------------------------+---------------+--------------------+-------------------+--------------------+-----------|
+| [[http://www.pjrc.com/teensy/teensyLC.html][Teensy LC microcontroller]]     |             1 |              11.65 |                 1 |              11.65 | [[http://www.pjrc.com/store/teensylc.html][teensy]]    |
+| [[datasheets/photodiode.pdf][pin photodiodes]]               |             2 |              0.689 |                10 |               6.89 | [[http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=197391591&uq=635990858986235822][digi-key]]  |
+| [[datasheets/headphone_amp.pdf][stereo headphone amplifier IC]] |             1 |               0.56 |                 4 |               2.24 | [[http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=197393882&uq=635990858986245823][digi-key]]  |
+| [[datasheets/rotary_encoder.pdf][rotary encoder]]                |             1 |               1.68 |                 3 |               5.04 | [[http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=197391970&uq=635990858986245823][digi-key]]  |
+| [[datasheets/enclosure.pdf][enclosure]]                     |             1 |               8.82 |                 1 |               8.82 | [[http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=197417826&uq=635990862011508319][digi-key]]  |
+| polarized capacitor           |             5 |              0.294 |                10 |               2.94 | [[http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=197437407&uq=635990938244361081][digi-key]]  |
+| non-polar capacitor           |             5 |             0.0259 |               100 |               2.59 | [[http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=197441060&uq=635990953437597503][digi-key]]  |
+| [[datasheets/headphone_jack.pdf][3.5mm audio jack]]              |             2 |               1.73 |                 4 |               6.92 | [[http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=197439359&uq=635990946124296246][digi-key]]  |
+| chunky knob                   |             1 |                  0 |                 0 |                  0 | TSG stock |
+| pushbutton switch             |             2 |                  0 |                 0 |                  0 | TSG stock |
+| BNC jack                      |             2 |                  0 |                 0 |                  0 | TSG stock |
+| BNC receptacle                |             2 |                  0 |                 0 |                  0 | TSG stock |
+
+Estimated cost (before shipping): $47.10
